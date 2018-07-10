@@ -18,8 +18,6 @@
 @implementation FeedViewController
 
 - (IBAction)didTapLogout:(id)sender {
-    
-
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error != nil) {
             NSLog(@"User log out failed: %@", error.localizedDescription);
