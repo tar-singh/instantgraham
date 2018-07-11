@@ -27,7 +27,6 @@
     
     [Parse initializeWithConfiguration:config];
     
-    //    
 //    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
 //    gameScore[@"score"] = @1337;
 //    gameScore[@"playerName"] = @"Sean Plott";
@@ -44,7 +43,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"AuthenticatedViewController"];
         
-        NSLog(@"heckin heck");
+//        NSLog(@"heckin heck");
         
     }
     return YES;

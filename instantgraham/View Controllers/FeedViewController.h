@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITableView *feedTable;
 @end

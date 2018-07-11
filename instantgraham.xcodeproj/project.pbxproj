@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		06D238DE825E5218FBC24CD5 /* libPods-instantgrahamTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCB98FB608EAF8DE53A8CE /* libPods-instantgrahamTests.a */; };
 		5E89CBA8BD4C168E7545D9C7 /* libPods-instantgraham.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 563621C819A78FA7B51D6A7D /* libPods-instantgraham.a */; };
+		7D8A6ECE20F52B89003E9BC4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A6ECD20F52B89003E9BC4 /* Post.m */; };
+		7D8A6ED120F555B9003E9BC4 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A6ED020F555B9003E9BC4 /* FeedCell.m */; };
+		7D8A6ED420F58838003E9BC4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A6ED320F58838003E9BC4 /* DetailViewController.m */; };
 		7DF4B1A320F41D5B00ED2376 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4B1A220F41D5B00ED2376 /* AppDelegate.m */; };
 		7DF4B1A620F41D5B00ED2376 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DF4B1A520F41D5B00ED2376 /* ViewController.m */; };
 		7DF4B1A920F41D5B00ED2376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DF4B1A720F41D5B00ED2376 /* Main.storyboard */; };
@@ -44,6 +47,12 @@
 		1671CFD0E54F66649204276F /* Pods-instantgrahamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instantgrahamUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-instantgrahamUITests/Pods-instantgrahamUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2ECE6855359E30C7672532F4 /* Pods-instantgrahamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instantgrahamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-instantgrahamTests/Pods-instantgrahamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		563621C819A78FA7B51D6A7D /* libPods-instantgraham.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instantgraham.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D8A6ECC20F52B89003E9BC4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		7D8A6ECD20F52B89003E9BC4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		7D8A6ECF20F555B9003E9BC4 /* FeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
+		7D8A6ED020F555B9003E9BC4 /* FeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedCell.m; sourceTree = "<group>"; };
+		7D8A6ED220F58838003E9BC4 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7D8A6ED320F58838003E9BC4 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7DF4B19E20F41D5B00ED2376 /* instantgraham.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instantgraham.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF4B1A120F41D5B00ED2376 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DF4B1A220F41D5B00ED2376 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -173,6 +182,8 @@
 				7DF4B1A520F41D5B00ED2376 /* ViewController.m */,
 				7DF4B1D620F431DD00ED2376 /* FeedViewController.h */,
 				7DF4B1D720F431DD00ED2376 /* FeedViewController.m */,
+				7D8A6ED220F58838003E9BC4 /* DetailViewController.h */,
+				7D8A6ED320F58838003E9BC4 /* DetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -180,6 +191,8 @@
 		7DF4B1D420F41F9B00ED2376 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D8A6ECF20F555B9003E9BC4 /* FeedCell.h */,
+				7D8A6ED020F555B9003E9BC4 /* FeedCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,6 +200,8 @@
 		7DF4B1D520F41F9F00ED2376 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7D8A6ECC20F52B89003E9BC4 /* Post.h */,
+				7D8A6ECD20F52B89003E9BC4 /* Post.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,10 +408,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-instantgraham/Pods-instantgraham-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -410,10 +431,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D8A6ECE20F52B89003E9BC4 /* Post.m in Sources */,
 				7DF4B1A620F41D5B00ED2376 /* ViewController.m in Sources */,
 				7DF4B1B120F41D5D00ED2376 /* main.m in Sources */,
+				7D8A6ED120F555B9003E9BC4 /* FeedCell.m in Sources */,
 				7DF4B1D820F431DD00ED2376 /* FeedViewController.m in Sources */,
 				7DF4B1A320F41D5B00ED2376 /* AppDelegate.m in Sources */,
+				7D8A6ED420F58838003E9BC4 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

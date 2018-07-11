@@ -18,7 +18,7 @@
 - (IBAction)didTapLogin:(id)sender {
     
     if ([self.usernameTextField.text isEqualToString:@""]) {
-        // do alert
+        // TODO: do alert
     }
     else {
         [self loginUser];
@@ -28,7 +28,7 @@
 - (IBAction)didTapSignUp:(id)sender {
     
     if ([self.usernameTextField.text isEqualToString:@""]) {
-//        do alert
+        // TODO: do alert
     }
     else {
        [self registerUser];
