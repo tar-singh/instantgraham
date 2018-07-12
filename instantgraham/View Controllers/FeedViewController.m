@@ -111,6 +111,12 @@
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell"];
     Post *post = self.postArray[indexPath.row];
     [cell setPost:post];
+    // set the image if nil
+    if (post.image == nil){
+        cell.pictureView.image = nil;
+        UIImage *defaultImage = [UIImage imageNamed:@"file-picture.png"];
+        cell.pictureView.image = defaultImage;
+    };
     return cell;
     
 }
