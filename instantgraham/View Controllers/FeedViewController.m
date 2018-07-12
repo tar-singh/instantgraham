@@ -28,7 +28,7 @@
     // Do any additional setup after loading the view.
     self.feedTable.delegate = self;
     self.feedTable.dataSource = self;
-    self.feedTable.rowHeight = 300;
+    self.feedTable.rowHeight = UITableViewAutomaticDimension;
     [self getPosts];
     [self refreshControlSetUp];
 }
