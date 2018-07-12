@@ -34,7 +34,7 @@
     newPost.image = [self getPFFileFromImage:image];
     newPost.author = [PFUser currentUser];
     newPost.caption = caption;
-    NSLog(@"%@hello", caption);
+    NSLog(@"caption is: %@", caption);
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
