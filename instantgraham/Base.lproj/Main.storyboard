@@ -89,7 +89,7 @@
                                                         <constraint firstAttribute="width" constant="345" id="qAJ-x2-aht"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wow! what a great day! so much fun! i sure love these days. what days those are, the ones that exist." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oid-8t-yZQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wow! what a great day! so much fun! i sure love these days. what days those are, the ones that exist." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oid-8t-yZQ">
                                                     <rect key="frame" x="15" y="159" width="345" height="61"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="345" id="AKH-vV-4Lx"/>
@@ -141,20 +141,45 @@
             </objects>
             <point key="canvasLocation" x="1839.2" y="132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="SzU-fq-YCD">
             <objects>
-                <viewController id="EIH-S9-Sza" sceneMemberID="viewController">
+                <viewController id="EIH-S9-Sza" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z5u-VO-gte">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gqM-Tt-0hC" customClass="PFImageView">
+                                <rect key="frame" x="16" y="76" width="343" height="244"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wow! what a great day! so much fun! i sure love these days. what days those are, the ones that exist." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acK-2Y-Bn8">
+                                <rect key="frame" x="16" y="328" width="343" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8:30:00 3/4/17" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9P-xn-hID">
+                                <rect key="frame" x="16" y="412" width="114" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="731-f9-QI1"/>
                     </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="acK-2Y-Bn8" id="8OH-ba-fkP"/>
+                        <outlet property="detailPictureView" destination="gqM-Tt-0hC" id="Wd2-z2-sFe"/>
+                        <outlet property="detailTimestampLabel" destination="D9P-xn-hID" id="N5H-cn-I7o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxA-d3-5Gi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="133"/>
+            <point key="canvasLocation" x="2640.8000000000002" y="132.68365817091455"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PXK-NG-gEg">

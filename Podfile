@@ -9,6 +9,7 @@ target 'instantgraham' do
 
   pod 'Parse'
   pod 'ParseUI'
+  pod 'DateTools'
 
   target 'instantgrahamTests' do
     inherit! :search_paths

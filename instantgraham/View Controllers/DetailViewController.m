@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ParseUI/ParseUI.h"
 
 @interface DetailViewController ()
 
@@ -17,12 +18,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self setDetailPost:self.detailPost];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)setDetailPost:(Post *)detailPost{
+    _detailPost = detailPost;
+    self.detailPictureView.file = detailPost[@"image"];
+    self.detailLabel.text = detailPost[@"caption"];
+    self.detailTimestampLabel.text = detailPost[@"date"];
+    [self.detailPictureView loadInBackground];
+}
+
 
 /*
 #pragma mark - Navigation

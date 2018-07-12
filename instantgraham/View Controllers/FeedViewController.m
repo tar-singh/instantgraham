@@ -12,6 +12,7 @@
 #import "ViewController.h"
 #import "Post.h"
 #import "FeedCell.h"
+#import "DetailViewController.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -148,15 +149,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    UITableViewCell *tappedCell = sender;
+    NSIndexPath *tappedIndexPath = [self.feedTable indexPathForCell:tappedCell];
+    Post *post = self.postArray[tappedIndexPath.row];
+    DetailViewController *detailViewController = [segue destinationViewController];
+    detailViewController.detailPost = post;
+//    [detailViewController setDetailPost:post];
 }
-*/
+
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {

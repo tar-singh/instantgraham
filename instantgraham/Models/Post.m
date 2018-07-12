@@ -10,6 +10,8 @@
 #import "PFObject.h"
 #import <Foundation/Foundation.h>
 #import "Parse/Parse.h"
+#import "DateTools.h"
+
 
 @implementation Post
 
@@ -20,6 +22,7 @@
 @dynamic image;
 @dynamic likeCount;
 @dynamic commentCount;
+@dynamic date;
 
 + (nonnull NSString *)parseClassName {
     return @"Post";
@@ -35,8 +38,19 @@
     newPost.likeCount = @(0);
     newPost.commentCount = @(0);
     
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateStyle = NSDateFormatterMediumStyle;
+    formatter.timeStyle = NSDateFormatterNoStyle;
+    NSDate *now = [NSDate date];
+    newPost.date = [formatter stringFromDate:now];
+    
+    
+//    NSLog(@"the date is: %@", newPost.date);
+
+    
     [newPost saveInBackgroundWithBlock: completion];
 }
+
 
 + (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
     
