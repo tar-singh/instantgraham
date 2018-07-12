@@ -30,11 +30,15 @@
     self.feedTable.dataSource = self;
     self.feedTable.rowHeight = 300;
     [self getPosts];
-    
+    [self refreshControlSetUp];
+}
+
+- (void) refreshControlSetUp {
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
     [self.feedTable insertSubview:self.refreshControl atIndex:0];
 }
+
 
 - (void)getPosts{
     // construct query

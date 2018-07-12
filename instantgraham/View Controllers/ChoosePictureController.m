@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.image = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,19 +54,21 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
-    [Post postUserImage:self.image withCaption:self.theCaption withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    // TODO: alert if no image
+    
+    
+    [Post postUserImage:self.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        
+        // TODO: if image !nil else error
+             
         if (!error){
             NSLog(@"image posted successfully");
-            NSLog(@"%@", self.theCaption);
         }
         else{
             NSLog(@"image failed to post");
         }
     }];
     [self didTapCancel:(id)nil];
-}
-- (IBAction)captionMade:(id)sender {
-    self.theCaption = self.captionField.text;
 }
 
 - (void)imagePickerMethod {

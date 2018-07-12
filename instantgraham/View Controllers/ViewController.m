@@ -35,6 +35,10 @@
     }
 
 }
+- (void) setUpAlertController{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Title" message:@"Message" preferredStyle:(UIAlertControllerStyleAlert)];
+}
+
 - (void)loginUser {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;

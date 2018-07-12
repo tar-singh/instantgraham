@@ -86,13 +86,13 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rFj-w4-WKb" customClass="PFImageView">
                                                     <rect key="frame" x="15" y="11" width="345" height="128"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="345" id="qAJ-x2-aht"/>
+                                                        <constraint firstAttribute="width" constant="345" id="De5-Cr-QFW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wow! what a great day! so much fun! i sure love these days. what days those are, the ones that exist." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oid-8t-yZQ">
                                                     <rect key="frame" x="15" y="159" width="345" height="61"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="345" id="AKH-vV-4Lx"/>
+                                                        <constraint firstAttribute="width" constant="345" id="xxV-J7-ium"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -100,13 +100,13 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rFj-w4-WKb" firstAttribute="trailing" secondItem="E8N-pf-j1l" secondAttribute="trailingMargin" id="0dp-BY-LMl"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="oid-8t-yZQ" secondAttribute="bottom" id="47T-5I-pMF"/>
-                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="trailing" secondItem="E8N-pf-j1l" secondAttribute="trailingMargin" id="8l9-AS-4hR"/>
-                                                <constraint firstItem="rFj-w4-WKb" firstAttribute="top" secondItem="E8N-pf-j1l" secondAttribute="topMargin" id="AtT-F4-a2Q"/>
-                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="top" secondItem="rFj-w4-WKb" secondAttribute="bottom" constant="20" id="R9z-26-rRC"/>
-                                                <constraint firstItem="rFj-w4-WKb" firstAttribute="leading" secondItem="E8N-pf-j1l" secondAttribute="leadingMargin" id="TBa-kW-Dda"/>
-                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="leading" secondItem="E8N-pf-j1l" secondAttribute="leadingMargin" id="tix-wq-Wgm"/>
+                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="top" secondItem="rFj-w4-WKb" secondAttribute="bottom" constant="20" id="D4E-vi-dW8"/>
+                                                <constraint firstItem="rFj-w4-WKb" firstAttribute="leading" secondItem="E8N-pf-j1l" secondAttribute="leadingMargin" id="F5C-wm-lud"/>
+                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="bottom" secondItem="E8N-pf-j1l" secondAttribute="bottomMargin" id="NWB-BZ-y2Q"/>
+                                                <constraint firstItem="rFj-w4-WKb" firstAttribute="trailing" secondItem="E8N-pf-j1l" secondAttribute="trailingMargin" id="Why-TD-2RP"/>
+                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="leading" secondItem="E8N-pf-j1l" secondAttribute="leadingMargin" id="aGz-dx-fXy"/>
+                                                <constraint firstItem="oid-8t-yZQ" firstAttribute="trailing" secondItem="E8N-pf-j1l" secondAttribute="trailingMargin" id="lks-cg-ihd"/>
+                                                <constraint firstItem="rFj-w4-WKb" firstAttribute="top" secondItem="E8N-pf-j1l" secondAttribute="topMargin" id="y2L-IG-xz3"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
