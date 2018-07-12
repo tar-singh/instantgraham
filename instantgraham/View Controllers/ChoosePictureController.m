@@ -35,8 +35,19 @@
 
 - (IBAction)didTouchPicture:(id)sender {
     [self imagePickerMethod];
-    
-    // TODO: have another method for picking image from gallery (tab view)
+}
+
+- (IBAction)fromGallery:(id)sender {
+    [self galleryPickerMethod];
+}
+
+
+- (void)galleryPickerMethod {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
 }
 
 - (IBAction)didTapCancel:(id)sender {

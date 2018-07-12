@@ -160,11 +160,19 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rOU-Jl-MAo">
-                                <rect key="frame" x="95" y="106" width="184" height="30"/>
+                                <rect key="frame" x="60" y="122" width="87" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="cLiCk hEre tO aDd pIcTuRe"/>
+                                <state key="normal" title="from camera"/>
                                 <connections>
                                     <action selector="didTouchPicture:" destination="QLn-8F-FZb" eventType="touchUpInside" id="XLv-AW-QkX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKJ-bl-oY1">
+                                <rect key="frame" x="206" y="122" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="from gallery"/>
+                                <connections>
+                                    <action selector="fromGallery:" destination="QLn-8F-FZb" eventType="touchUpInside" id="kvq-J3-AFi"/>
                                 </connections>
                             </button>
                         </subviews>
