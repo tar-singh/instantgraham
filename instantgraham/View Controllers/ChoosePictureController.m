@@ -54,22 +54,41 @@
 }
 
 - (IBAction)didTapShare:(id)sender {
-    // TODO: alert if no image
+    // alert if no image
+    if (self.image == nil){
+        [self imageAlertController];
+    }
     
-    
-    [Post postUserImage:self.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
-        
-        // TODO: if image !nil else error
-             
-        if (!error){
-            NSLog(@"image posted successfully");
-        }
-        else{
-            NSLog(@"image failed to post");
-        }
-    }];
-    [self didTapCancel:(id)nil];
+    else {
+        [Post postUserImage:self.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+            if (!error){
+                NSLog(@"image posted successfully");
+            }
+            else{
+                NSLog(@"image failed to post");
+            }
+        }];
+        [self didTapCancel:(id)nil];
+    }
 }
+
+- (void) imageAlertController {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Image not present" message:@"Please take or select an image" preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    // create an OK action
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        // handle response here.
+        
+    }];
+    // add the OK action to the alert controller
+    [alert addAction:okAction];
+    
+    // present alert
+    [self presentViewController:alert animated:YES completion:^{
+        // optional code for what happens after the alert controller has finished presenting
+    }];
+}
+
 
 - (void)imagePickerMethod {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];
