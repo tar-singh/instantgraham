@@ -10,6 +10,7 @@ target 'instantgraham' do
   pod 'Parse'
   pod 'ParseUI'
   pod 'DateTools'
+  pod 'MBProgressHUD'
 
   target 'instantgrahamTests' do
     inherit! :search_paths

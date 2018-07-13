@@ -14,6 +14,7 @@
 #import "FeedCell.h"
 #import "DetailViewController.h"
 #import "InfiniteScrollActivityView.h"
+#import "MBProgressHUD/MBProgressHUD.h"
 
 @interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (nonatomic, strong) NSMutableArray *postArray;
@@ -35,7 +36,7 @@ InfiniteScrollActivityView* loadingMoreView;
     self.feedTable.delegate = self;
     self.feedTable.dataSource = self;
     self.feedTable.rowHeight = UITableViewAutomaticDimension;
-    [self getPosts];
+    [self getPostsHUD];
     [self refreshControlSetUp];
 }
 
@@ -76,6 +77,37 @@ InfiniteScrollActivityView* loadingMoreView;
     }
 }
 
+// with progress HUD
+- (void)getPostsHUD{
+    // construct query
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:true];
+    
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        [MBProgressHUD hideHUDForView:self.view animated:true];
+        if (!error) {
+            NSLog(@"there are posts");
+            // do something with the data fetched
+            self.postArray = [NSMutableArray arrayWithArray:posts];
+            self.isMoreDataLoading = false;
+            // Stop the loading indicator
+            [loadingMoreView stopAnimating];
+            [self.feedTable reloadData];
+            [self.refreshControl endRefreshing];
+        }
+        else {
+            // handle error
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+    }];
+}
+
+// without progress HUD
 - (void)getPosts{
     // construct query
     PFQuery *postQuery = [Post query];
@@ -94,7 +126,6 @@ InfiniteScrollActivityView* loadingMoreView;
             [loadingMoreView stopAnimating];
             [self.feedTable reloadData];
             [self.refreshControl endRefreshing];
-            
         }
         else {
             // handle error
@@ -102,7 +133,6 @@ InfiniteScrollActivityView* loadingMoreView;
         }
     }];
 }
-
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
