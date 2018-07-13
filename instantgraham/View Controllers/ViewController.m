@@ -23,8 +23,8 @@
     else {
         [self loginUser];
     }
-    
 }
+
 - (IBAction)didTapSignUp:(id)sender {
     //alert if fields not filled in
     if ([self.usernameTextField.text isEqualToString:@""] || [self.passwordTextField.text isEqualToString:@""]) {
@@ -33,8 +33,8 @@
     else {
        [self registerUser];
     }
-
 }
+
 - (void) setUpAlertController {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Blank Field" message:@"All fields must be filled" preferredStyle:(UIAlertControllerStyleAlert)];
     
@@ -88,9 +88,6 @@
     }];
 }
 
-
-
-
 -  (void)registerUser  {
     // initialize a user object
     PFUser *newUser = [PFUser user];
@@ -112,17 +109,14 @@
     }];
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

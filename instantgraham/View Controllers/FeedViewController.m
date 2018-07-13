@@ -13,19 +13,25 @@
 #import "Post.h"
 #import "FeedCell.h"
 #import "DetailViewController.h"
+#import "InfiniteScrollActivityView.h"
 
-@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource>
-
+@interface FeedViewController () <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 @property (nonatomic, strong) NSMutableArray *postArray;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (assign, nonatomic) BOOL isMoreDataLoading;
 
 @end
 
 @implementation FeedViewController
 
+bool isMoreDataLoading = false;
+InfiniteScrollActivityView* loadingMoreView;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    // Set up Infinite Scroll loading indicator
+    [self activityViewSetUp];
     self.feedTable.delegate = self;
     self.feedTable.dataSource = self;
     self.feedTable.rowHeight = UITableViewAutomaticDimension;
@@ -33,12 +39,42 @@
     [self refreshControlSetUp];
 }
 
+- (void) activityViewSetUp {
+    CGRect frame = CGRectMake(0, self.feedTable.contentSize.height, self.feedTable.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.feedTable addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.feedTable.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.feedTable.contentInset = insets;
+}
+
+
 - (void) refreshControlSetUp {
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(getPosts) forControlEvents:UIControlEventValueChanged];
     [self.feedTable insertSubview:self.refreshControl atIndex:0];
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.isMoreDataLoading){
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.feedTable.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.feedTable.bounds.size.height;
+        
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.feedTable.isDragging) {
+            self.isMoreDataLoading = true;
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.feedTable.contentSize.height, self.feedTable.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            // load more results
+            [self getPosts];
+        }
+    }
+}
 
 - (void)getPosts{
     // construct query
@@ -49,10 +85,13 @@
     
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
-        if (posts) {
+        if (!error) {
             NSLog(@"there are posts");
             // do something with the data fetched
             self.postArray = [NSMutableArray arrayWithArray:posts];
+            self.isMoreDataLoading = false;
+            // Stop the loading indicator
+            [loadingMoreView stopAnimating];
             [self.feedTable reloadData];
             [self.refreshControl endRefreshing];
             

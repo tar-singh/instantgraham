@@ -10,6 +10,7 @@
 		06D238DE825E5218FBC24CD5 /* libPods-instantgrahamTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95CCB98FB608EAF8DE53A8CE /* libPods-instantgrahamTests.a */; };
 		5E89CBA8BD4C168E7545D9C7 /* libPods-instantgraham.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 563621C819A78FA7B51D6A7D /* libPods-instantgraham.a */; };
 		7D1BD0AA20F7111A0057844B /* ChoosePictureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BD0A920F7111A0057844B /* ChoosePictureController.m */; };
+		7D1BD0AD20F87D690057844B /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D1BD0AC20F87D690057844B /* InfiniteScrollActivityView.m */; };
 		7D8A6ECE20F52B89003E9BC4 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A6ECD20F52B89003E9BC4 /* Post.m */; };
 		7D8A6ED120F555B9003E9BC4 /* FeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A6ED020F555B9003E9BC4 /* FeedCell.m */; };
 		7D8A6ED420F58838003E9BC4 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8A6ED320F58838003E9BC4 /* DetailViewController.m */; };
@@ -50,6 +51,8 @@
 		563621C819A78FA7B51D6A7D /* libPods-instantgraham.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-instantgraham.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1BD0A820F7111A0057844B /* ChoosePictureController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoosePictureController.h; sourceTree = "<group>"; };
 		7D1BD0A920F7111A0057844B /* ChoosePictureController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoosePictureController.m; sourceTree = "<group>"; };
+		7D1BD0AB20F87D690057844B /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		7D1BD0AC20F87D690057844B /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		7D8A6ECC20F52B89003E9BC4 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		7D8A6ECD20F52B89003E9BC4 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		7D8A6ECF20F555B9003E9BC4 /* FeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedCell.h; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 		7DF4B1D420F41F9B00ED2376 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D1BD0AB20F87D690057844B /* InfiniteScrollActivityView.h */,
+				7D1BD0AC20F87D690057844B /* InfiniteScrollActivityView.m */,
 				7D8A6ECF20F555B9003E9BC4 /* FeedCell.h */,
 				7D8A6ED020F555B9003E9BC4 /* FeedCell.m */,
 			);
@@ -445,6 +450,7 @@
 				7DF4B1D820F431DD00ED2376 /* FeedViewController.m in Sources */,
 				7D1BD0AA20F7111A0057844B /* ChoosePictureController.m in Sources */,
 				7DF4B1A320F41D5B00ED2376 /* AppDelegate.m in Sources */,
+				7D1BD0AD20F87D690057844B /* InfiniteScrollActivityView.m in Sources */,
 				7D8A6ED420F58838003E9BC4 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
