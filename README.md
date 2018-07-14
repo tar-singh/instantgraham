@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 - [x] Progress HUD shows when initially loading posts after launching
 - [x] Forces user to select an image before being able to post
-      - [x] Posts that have no image (because they were posted before this feature was implemented) all show the same default image
+- [x] Posts that have no image (because they were posted before this feature was implemented) all show the same default image
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
