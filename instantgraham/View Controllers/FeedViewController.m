@@ -25,6 +25,10 @@
 
 @implementation FeedViewController
 
+NSArray *data;
+NSString *CellIdentifier = @"feedCell";
+NSString *HeaderViewIdentifier = @"TableViewHeaderView";
+
 bool isMoreDataLoading = false;
 InfiniteScrollActivityView* loadingMoreView;
 
@@ -155,10 +159,7 @@ InfiniteScrollActivityView* loadingMoreView;
     // Dispose of any resources that can be recreated.
 }
 
-
 #pragma mark - Navigation
-
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
@@ -173,8 +174,6 @@ InfiniteScrollActivityView* loadingMoreView;
         //    [detailViewController setDetailPost:post];
     }
 }
-
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     FeedCell *cell = [tableView dequeueReusableCellWithIdentifier:@"feedCell"];

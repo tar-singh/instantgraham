@@ -12,6 +12,7 @@
 #import "ViewController.h"
 #import "Post.h"
 
+
 @interface ChoosePictureController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, strong) UIImage *image;
@@ -60,6 +61,7 @@
     }
     
     else {
+        
         [Post postUserImage:self.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
             if (!error){
                 NSLog(@"image posted successfully");
