@@ -26,6 +26,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+- [x] Forces user to fill both username and password fields before being able to login/sign up
 - [x] Progress HUD shows when initially loading posts after launching
 - [x] Forces user to select an image before being able to post
 - [x] Posts that have no image (because they were posted before this feature was implemented) all show the same default image
